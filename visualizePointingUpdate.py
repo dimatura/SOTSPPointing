@@ -4,9 +4,9 @@ import sunpy.map
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.ndimage as ndimage
+import scipy.interpolate
 import os
 import sys
-import pdb
 
 def slitToPixLocation(slitpos):
     """Given the slit position from SOT/SP, return the actual position

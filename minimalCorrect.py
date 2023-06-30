@@ -4,9 +4,7 @@ given datetime Should work on nearly any version of python, including even
 python2. This is meant to be easy to replicate in another language e.g., in
 IDL, Julia, MATLAB, x86_64 assembly, etc.
 """
-import os
 import sys
-import pdb
 import datetime
 from math import exp
 

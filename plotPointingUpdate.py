@@ -1,11 +1,9 @@
 import os
-import random
 import sys
 import multiprocessing
 import datetime
 import numpy as np
 import scipy.stats
-import sunpy
 import matplotlib.pyplot as plt
 import astropy.io.fits as fits
 
@@ -64,9 +62,8 @@ class LinearPlusLUT:
             
         This is done by doing a cross-validation to find      
         """
-        NInit = XLUT.shape[0]
      
-        #if we're filtering, filter 
+        #if we're filtering, filter
         if self.yOutlierQuantile is not None:
             qLow = np.nanquantile(y, self.yOutlierQuantile)
             qHigh = np.nanquantile(y, 1-self.yOutlierQuantile)
@@ -233,9 +230,6 @@ if __name__ == "__main__":
 
     if not os.path.exists(visTarget):
         os.mkdir(visTarget)
-
-    covariates = []
-    pointing = []
 
     #Do this in multiprocessing; turn this up or down depending on your system
     P = multiprocessing.Pool(12)
